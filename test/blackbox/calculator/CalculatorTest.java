@@ -18,9 +18,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void checkModSubtractionFunction() {
+    public void checkModSubtraction1Function() {
         Calculator calculator = new Calculator();
         assertEquals(2, calculator.modSubtract(2,4));
+    }
+
+    @Test
+    public void checkModSubtraction2Function() {
+        Calculator calculator = new Calculator();
         assertEquals(2, calculator.modSubtract(4,2));
     }
 
