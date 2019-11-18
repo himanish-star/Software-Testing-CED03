@@ -19,6 +19,15 @@ public class ShapeTest {
     }
 
     @Test
+    public void getSidedInSortedOrderTriangle() {
+        ArrayList<Integer> sideLengths = new ArrayList<>();
+        sideLengths.addAll(Arrays.asList(12,5,13));
+
+        Triangle triangle = new Triangle(sideLengths);
+        assertEquals(Arrays.asList(5,12,13), triangle.getSideLengthsSorted());
+    }
+
+    @Test
     public void computePerimeterForRectangle() {
         ArrayList<Integer> sideLengths = new ArrayList<>();
         sideLengths.addAll(Arrays.asList(4,5,4,5));
@@ -46,5 +55,14 @@ public class ShapeTest {
         Rectangle rectangle = new Rectangle(sideLengths);
         assertEquals(18, rectangle.getPerimeter());
         assertEquals(20, rectangle.getArea(4, 5),2);
+    }
+
+    @Test
+    public void getSidedInSortedOrderRectangle() {
+        ArrayList<Integer> sideLengths = new ArrayList<>();
+        sideLengths.addAll(Arrays.asList(12,5,5,12));
+
+        Rectangle rectangle = new Rectangle(sideLengths);
+        assertEquals(Arrays.asList(5,5,12,12), rectangle.getSideLengthsSorted());
     }
 }

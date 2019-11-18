@@ -1,6 +1,7 @@
 package blackbox.shape;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Shape {
     private ArrayList<Integer> sideLengths;
@@ -15,6 +16,11 @@ public class Shape {
             sum += sideLength;
         }
         return sum;
+    }
+
+    public ArrayList<Integer> getSideLengthsSorted() {
+        Collections.sort(this.sideLengths);
+        return this.sideLengths;
     }
 
     public double getArea(int a,int b) {
