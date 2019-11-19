@@ -10,14 +10,14 @@ public class StackTest {
         Stack stack = new Stack();
         stack.pushToStack(4);
         try {
-        assertEquals(4,stack.popFromStack());
+            assertEquals(4,stack.popFromStack());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     @Test
-    public void shouldThrowExceptionForEmptyStackAcess() {
+    public void shouldThrowExceptionForEmptyStackAccess() {
         Stack stack = new Stack();
         try {
            stack.popFromStack();
