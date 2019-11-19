@@ -9,7 +9,21 @@ public class StackTest {
     public void pushAndPopElement_Stack() {
         Stack stack = new Stack();
         stack.pushToStack(4);
+        try {
         assertEquals(4,stack.popFromStack());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldThrowExceptionForEmptyStackAcess() {
+        Stack stack = new Stack();
+        try {
+           stack.popFromStack();
+        } catch (Exception e) {
+            assertEquals("Stack is Empty!",e.getMessage());
+        }
     }
 
     @Test
@@ -18,9 +32,13 @@ public class StackTest {
         stack.pushToStack(3);
         stack.pushToStack(4);
 
-        assertEquals(4,stack.popFromStack());
-        assertEquals(0,stack.getTopIndex());
-        assertEquals(3,stack.popFromStack());
+        try {
+            assertEquals(4,stack.popFromStack());
+            assertEquals(0,stack.getTopIndex());
+            assertEquals(3,stack.popFromStack());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
@@ -30,26 +48,30 @@ public class StackTest {
         stack.pushToStack(12);
         stack.pushToStack(14);
 
-        assertEquals(2,stack.getTopIndex());
-        assertEquals(14,stack.popFromStack());
-        assertEquals(1,stack.getTopIndex());
+        try {
+            assertEquals(2,stack.getTopIndex());
+            assertEquals(14,stack.popFromStack());
+            assertEquals(1,stack.getTopIndex());
 
-        stack.pushToStack(15);
+            stack.pushToStack(15);
 
-        assertEquals(2,stack.getTopIndex());
-        assertEquals(15,stack.popFromStack());
-        assertEquals(1,stack.getTopIndex());
-        assertEquals(12,stack.popFromStack());
+            assertEquals(2,stack.getTopIndex());
+            assertEquals(15,stack.popFromStack());
+            assertEquals(1,stack.getTopIndex());
+            assertEquals(12,stack.popFromStack());
 
-        stack.pushToStack(25);
-        stack.pushToStack(42);
+            stack.pushToStack(25);
+            stack.pushToStack(42);
 
 
-        assertEquals(2,stack.getTopIndex());
-        assertEquals(42,stack.popFromStack());
-        assertEquals(1,stack.getTopIndex());
-        assertEquals(25,stack.popFromStack());
-        assertEquals(0,stack.getTopIndex());
-        assertEquals(11,stack.popFromStack());
+            assertEquals(2,stack.getTopIndex());
+            assertEquals(42,stack.popFromStack());
+            assertEquals(1,stack.getTopIndex());
+            assertEquals(25,stack.popFromStack());
+            assertEquals(0,stack.getTopIndex());
+            assertEquals(11,stack.popFromStack());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

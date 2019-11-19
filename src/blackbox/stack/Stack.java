@@ -19,7 +19,10 @@ public class Stack {
         this.top++;
     }
 
-    int popFromStack() {
+    int popFromStack() throws Exception {
+        if(this.arr == null)
+            throw new Exception("Stack is Empty!");
+
         int topOfTheStack = this.arr.get(this.top);
         this.arr.remove(this.top);
         this.top--;
